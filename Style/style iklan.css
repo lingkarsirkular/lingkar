@@ -1,0 +1,153 @@
+.container {
+  margin: 40px 0;
+}
+
+/* Style untuk carousel container */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px 0;
+}
+
+/* Style untuk carousel track (inner container) */
+.carousel-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: calc(250px * 12); /* Lebar total semua item */
+}
+
+/* Hentikan animasi saat hover */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Style untuk item carousel */
+.carousel-item {
+  flex: 0 0 auto;
+  width: 250px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Caption untuk gambar */
+.image-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Animasi untuk autoscroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 6)); /* Setengah dari total item */
+  }
+}
+
+/* Controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.carousel-button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: #2980b9;
+}
+
+/* Style untuk infinite scroll carousel */
+.infinite-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 40px 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+
+.infinite-carousel-track {
+  display: flex;
+  width: calc(200px * 20);
+  animation: continuousScroll 40s linear infinite;
+}
+
+.infinite-carousel-item {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 0 10px;
+}
+
+.infinite-carousel-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.infinite-carousel-item img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes continuousScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 10)); /* Setengah dari total item */
+  }
+}
+
+/* Speed control */
+.speed-control {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  max-width: 300px;
+}
+
+.speed-control label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.speed-control input {
+  width: 100%;
+}
